@@ -4,7 +4,7 @@
         stage('Checkout') {
             steps {
                 dir('my-directory') {
-                    checkout scm
+                    checkout https://github.com/saikumarKothada/projectZ.git
                 }
             }
         }
