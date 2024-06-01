@@ -1,17 +1,13 @@
- pipeline {
+pipeline {
     agent any
     stages {
-        stage('git'){
-         steps {
-            git url: 'https://github.com/saikumarKothada/projectZ.git'
-         }
-        } 
-        stage('Checkout') {
+        stage('Checkout Main Repository') {
             steps {
-                dir('my-directory') {
+                dir('my-subdirectory') {
                     checkout scm
                 }
             }
         }
+        // Add more stages as needed
     }
 }
