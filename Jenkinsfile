@@ -23,7 +23,7 @@ environment {
 
         stage('Push to Prod') {
             when {
-                branch 'master' // Only run this stage on the 'master' branch
+                branch 'prod' // Only run this stage on the 'master' branch
             }
             steps {
                 // Add steps to copy Git files to the prod server
