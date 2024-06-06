@@ -14,7 +14,7 @@ environment {
         stage('Push to Prod') {
             steps {
                 // Add steps to copy Git files to the prod server
-                sh "rsync -avz ${WORKSPACE}/push-to-prod ${TEST_SERVER_CREDENTIAL_USR}@10.1.0.6:/home/Saikumar"
+                sh "scp ${WORKSPACE}/push-to-prod ${TEST_SERVER_CREDENTIAL_USR}@10.1.0.6:/home/Saikumar"
             }
         }
     }
