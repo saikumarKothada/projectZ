@@ -11,20 +11,7 @@ environment {
             }
         }
 
-        stage('Push to Test') {
-            when {
-                branch 'test' // Only run this stage on the 'test' branch
-            }
-            steps {
-                // Add steps to copy Git files to the test server
-                sh "rsync -avz ${WORKSPACE}/push-to-test ${TEST_SERVER_CREDENTIAL_USR}@10.1.0.5:/home/Saikumar"
-            }
-        }
-
         stage('Push to Prod') {
-            when {
-                branch 'prod' // Only run this stage on the 'master' branch
-            }
             steps {
                 // Add steps to copy Git files to the prod server
                 sh "rsync -avz ${WORKSPACE}/push-to-prod ${TEST_SERVER_CREDENTIAL_USR}@10.1.0.6:/home/Saikumar"
