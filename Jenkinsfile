@@ -14,7 +14,7 @@ pipeline {
         stage('Push to Prod') {
             steps {
                 // Add steps to copy Git files to the prod server
-                sh "sshpass -p ${TEST_SERVER_CREDENTIAL_PSW} scp ${WORKSPACE}/push-to-prod ${TEST_SERVER_CREDENTIAL_USR}@10.1.0.6:/home/Saikumar"
+                sh 'sshpass -p ${TEST_SERVER_CREDENTIAL_PSW} scp ${WORKSPACE}/push-to-prod ${TEST_SERVER_CREDENTIAL_USR}@10.1.0.6:/home/Saikumar/'
             }
         }
     }
