@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'j-slave'
+    }
     environment {
         TEST_SERVER_CREDENTIAL = credentials('a0a5b13a-9f82-425d-a320-7213231b8f2a')
     }
